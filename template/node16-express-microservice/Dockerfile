@@ -31,7 +31,7 @@ WORKDIR /home/app/function
 COPY function/ ./
 
 # Install additional packages needed by function
-RUN yarn --no-cache --frozen-lockfile || :
+RUN yarn --no-cache --ignore-engines || :
 
 # Set correct permissions to use non root user
 WORKDIR /home/app/
