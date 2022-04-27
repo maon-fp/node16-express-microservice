@@ -19,7 +19,8 @@ RUN mkdir -p /home/app
 WORKDIR /home/app
 COPY package.json ./
 
-# Install template (microservice) packages first
+# Install template (microservice) packages first.
+# This layer can then be used for each function based on this template.
 RUN yarn --no-cache --frozen-lockfile
 
 # Copy outer function handler
